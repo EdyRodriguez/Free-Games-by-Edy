@@ -1,0 +1,14 @@
+{
+    "functions": {
+      "api/**/*.js": {
+        "memory": 512
+      }
+    },
+    "routes": [
+      {
+        "src": "/proxy",
+        "dest": "/api/proxy"
+      }
+    ]
+  }
+  
