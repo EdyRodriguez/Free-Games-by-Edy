@@ -10,9 +10,15 @@ export default async (req, res) => {
 
   try {
     const response = await fetch(req.query.url);
-    console.log('Got response from the URL:', response);
-    const data = await response.text();
 
+    // Copy the response headers
+    const headers = new Headers(response.headers);
+
+    // Remove the 'content-encoding' and 'content-length' headers, as they can cause decoding issues
+    headers.delete('content-encoding');
+    headers.delete('content-length');
+
+    // Set CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader(
@@ -20,12 +26,14 @@ export default async (req, res) => {
       'Content-Type, Authorization, X-Requested-With'
     );
 
+    // Forward the response status and headers
     res.status(response.status);
-    for (const [key, value] of response.headers.entries()) {
+    for (const [key, value] of headers.entries()) {
       res.setHeader(key, value);
     }
-    console.log('Sending response with data', data);
-    res.send(data);
+
+    // Send the response data as a stream, allowing 'node-fetch' to handle the encoding automatically
+    response.body.pipe(res);
   } catch (error) {
     console.error('Error fetching data from the URL:', error);
     res.status(500).send(`Error fetching data from the URL: ${error.message}`);
