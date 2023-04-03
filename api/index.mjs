@@ -23,7 +23,7 @@ export default async (req, res) => {
     for (const [key, value] of response.headers.entries()) {
       res.setHeader(key, value);
     }
-
+    console.log('Sending response with data', data);
     res.send(data);
   } catch (error) {
     console.error('Error fetching data from the URL:', error);
