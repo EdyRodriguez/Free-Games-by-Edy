@@ -6,9 +6,9 @@ function Footer () {
     <>
       <footer className="Footer">
         <div className="footer-content">
-          <p className='footer-paragraph'> This app uses the: <a href="https://rawg.io/">Rawg.io API</a> </p>
-          <p className='footer-paragraph'> This app uses the: <a href="https://steamcommunity.com/groups/freegamesfinders">Rss from freegamesfinders</a> </p>
-          <p className='footer-paragraph'> Made by: <a href="https://edyrodriguez.dev">@EdyRodriguez</a> </p>
+          <p className='footer-paragraph'> This app uses the: <a className='link' href="https://rawg.io/">Rawg.io API</a> </p>
+          <p className='footer-paragraph'> This app uses the: <a className='link' href="https://steamcommunity.com/groups/freegamesfinders">Rss from freegamesfinders</a> </p>
+          <p className='footer-paragraph'> Made by: <a className='link' href="https://edyrodriguez.dev">@EdyRodriguez</a> </p>
         </div>
         <div className='no-copy'>
           <TbCopyrightOff className='no-copy-icon' />

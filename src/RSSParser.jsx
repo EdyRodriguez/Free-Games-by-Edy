@@ -22,7 +22,7 @@ const RSSParser = ({ url }) => {
 
   const fetchGameDetails = async (gameTitle) => {
     const response = await fetch(
-      `https://api.rawg.io/api/games?search=${encodeURIComponent(gameTitle)}&key=1c441ec9ae43472aace2afa96ca1281a`
+      `https://api.rawg.io/api/games?search=${encodeURIComponent(gameTitle)}&key=${import.meta.env.VITE_APP_RAWG_API_KEY}`
     );
     const data = await response.json();
     return data.results[0];
