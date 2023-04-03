@@ -1,13 +1,13 @@
 {
     "functions": {
-      "api/**/*.js": {
+      "cors-proxy/**/*.js": {
         "memory": 512
       }
     },
     "routes": [
       {
         "src": "/proxy",
-        "dest": "/api/proxy"
+        "dest": "/cors-proxy/index.js"
       }
     ]
   }
