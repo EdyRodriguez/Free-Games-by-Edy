@@ -8,6 +8,7 @@ module.exports = async (req, res) => {
   }
 
   try {
+    console.log(`Fetching ${url}`);
     const response = await fetch(url);
     const data = await response.text();
     res.send(data);
