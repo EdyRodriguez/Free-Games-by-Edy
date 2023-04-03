@@ -4,7 +4,7 @@ import Navbar from './Navbar/Navbar'
 import Footer from './Footer/Footer'
 import './App.css';
 function App() {
-  const rssUrl = '/proxy?url=https://steamcommunity.com/groups/freegamesfinders/rss/';
+  const rssUrl = '/api/index?url=https://steamcommunity.com/groups/freegamesfinders/rss/';
 
   return (
     <div className="App">
