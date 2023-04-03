@@ -10,6 +10,7 @@ export default async (req, res) => {
 
   try {
     const response = await fetch(req.query.url);
+    console.log('Got response from the URL:', response);
     const data = await response.text();
 
     res.setHeader('Access-Control-Allow-Origin', '*');
