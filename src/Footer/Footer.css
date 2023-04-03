@@ -1,0 +1,28 @@
+.Footer{
+    background-color: black;
+    padding: 1rem;
+    position:sticky;
+    color: white;
+}
+
+.no-copy{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    align-items: center;
+    margin: 5px;
+}
+.footer-content{
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-wrap: wrap;
+}
+.footer-paragraph{
+    margin: 5px;
+}
+.no-copy-icon{
+    width: 30px;
+    height: 25px;
+    margin: 0;
+}
